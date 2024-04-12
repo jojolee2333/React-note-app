@@ -1,5 +1,3 @@
-// eventBus.js
-
 import EventEmitter from 'eventemitter3';
 
 const eventBus = new EventEmitter();

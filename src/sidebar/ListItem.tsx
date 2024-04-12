@@ -1,5 +1,3 @@
-// ListItem.tsx
-
 import React from "react";
 
 interface ListItemProps {
