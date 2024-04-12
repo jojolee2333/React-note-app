@@ -1,0 +1,17 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app {
+  display: flex;
+}
+
+/* 定义滚动条的样式 */
+::-webkit-scrollbar {
+  width: 2px; /* 设置滚动条宽度 */
+}
+
+

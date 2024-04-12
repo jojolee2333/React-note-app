@@ -1,0 +1,41 @@
+.notes__small-body {
+    text-overflow: ellipsis;
+    word-break: keep-all;
+}
+
+.notes__list {
+    overflow-y:scroll;
+    height: 600px;
+}
+
+.notes__list-item{
+    width: 285px;
+    overflow: hidden;
+    border: 1px solid #00af8c;
+}
+
+.notes__list-item--selected {
+    background: #00af8c;
+    border-radius: 7px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #FFF;
+}
+
+.notes__list-item--selected .notes__small-updated {
+    color: #FFF;
+}
+
+.notes__small-title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}    
+
+.notes__small-body {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notes__small-updated {
+    
+}
