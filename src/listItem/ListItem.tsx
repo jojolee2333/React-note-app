@@ -1,10 +1,8 @@
 import React from "react";
+import "./ListItem.css";
+import { Note } from "../interfaces";
 
-interface ListItemProps {
-	id: number;
-	title: string;
-	body: string;
-	updated: string;
+interface ListItemProps extends Note {
 	onItemClick: (id: number) => void;
 	onItemDbClick: (id: number) => void;
 	active: boolean;

@@ -1,0 +1,35 @@
+.notes__small-updated {
+    color: #aaaaaa;
+    font-style: italic;
+    text-align: right;
+  }
+  
+  .notes__preview {
+    margin-left: 1.87em;
+    border: 2px solid #009578;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 2em 3em;
+    flex-grow: 1;
+  }
+  
+  .notes__title,
+  .notes__body {
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+  
+  .notes__title {
+    font-size: 3em;
+    font-weight: bold;
+  }
+  
+  .notes__body {
+    flex-grow: 1;
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-top: 2em;
+    resize: none;
+  }

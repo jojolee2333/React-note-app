@@ -1,16 +1,11 @@
 // EditPanel.tsx
 import React, { useState, useEffect } from "react";
+import "./EditPanel.css";
 import eventBus from "../EventBus";
+import { Note } from "../interfaces";
 
 interface EditPanelProps {
 	editNote: Note | null;
-}
-
-interface Note {
-	title: string;
-	body: string;
-	id: number;
-	updated: string;
 }
 
 const EditPanel: React.FC<EditPanelProps> = () => {

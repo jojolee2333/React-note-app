@@ -1,0 +1,39 @@
+.notes__list-item {
+	cursor: pointer;
+	margin: 2px;
+    width: 285px;
+	overflow: hidden;
+	border: 1px solid #00af8c;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+.notes__small-title,
+.notes__small-updated {
+	padding: 10px;
+}
+
+.notes__small-title {
+	font-size: 1.2em;
+    overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.notes__small-body {
+	padding: 0 10px;
+    text-overflow: ellipsis;
+	word-break: keep-all;
+    overflow: hidden;
+}
+
+.notes__list-item--selected {
+	background: #00af8c;
+	border-radius: 7px;
+	font-weight: bold;
+	border-radius: 10px;
+	color: #fff;
+}
+
+.notes__list-item--selected .notes__small-updated {
+	color: #fff;
+}

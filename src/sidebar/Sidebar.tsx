@@ -2,21 +2,15 @@ import React, { useContext, useEffect } from "react";
 import NotesAPI from "../api.js";
 import "./Sidebar.css";
 import { useState } from "react";
-import ListItem from "./ListItem";
-import ImportButton from "./ImportButton";
-import ExportButton from "./ExportButton";
+import ListItem from "../listItem/ListItem";
+import ImportButton from "../importButton/ImportButton";
+import ExportButton from "../exportButton/ExportButton";
 import eventBus from "../EventBus";
+import { Note } from "../interfaces";
 
 interface Props {
 	notes: Note[];
 	activeNoteId: number | null;
-}
-
-interface Note {
-	title: string;
-	body: string;
-	id: number;
-	updated: string;
 }
 
 const Sidebar: React.FC<Props> = () => {

@@ -4,13 +4,7 @@ import NotesAPI from "./api.js";
 import Sidebar from "./sidebar/Sidebar";
 import EditPanel from "./editPanel/EditPanel";
 import eventBus from "./EventBus";
-
-interface Note {
-	title: string;
-	body: string;
-	id: number;
-	updated: string;
-}
+import { Note } from "./interfaces";
 
 const App: React.FC = () => {
 	const [notes, setNotes] = useState<Note[]>([]);

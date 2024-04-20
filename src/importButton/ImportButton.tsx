@@ -1,8 +1,15 @@
 import React from "react";
 import NotesAPI from "../api.js";
-const ImportButton: React.FC = ({ noteParseSuccess }) => {
+import { Note } from "../interfaces.js";
+
+interface ImportButtonProps {
+	handleFileUpload: () => void; // 点击按钮时的事件处理函数
+	noteParseSuccess: () => void;
+}
+
+const ImportButton: React.FC<ImportButtonProps> = ({ noteParseSuccess }) => {
 	// 处理上传的文件
-	const handleFileUpload = (file) => {
+	const handleFileUpload = (file: Blob) => {
 		const reader = new FileReader();
 
 		// 当文件加载完成时触发该事件
@@ -10,7 +17,9 @@ const ImportButton: React.FC = ({ noteParseSuccess }) => {
 			const fileContent = event.target.result;
 
 			// 对文件内容进行解析
-			let parsedArr = parseCSV(fileContent);
+			let parsedArr = parseCSV(fileContent) || [];
+			console.log(parsedArr, "parsedArr");
+
 			parsedArr.map((noteItem) => {
 				const newNote: Note = {
 					title: noteItem[0],
@@ -20,7 +29,7 @@ const ImportButton: React.FC = ({ noteParseSuccess }) => {
 				};
 				NotesAPI.saveNote(newNote);
 			});
-			noteParseSuccess("yes");
+			noteParseSuccess();
 		};
 
 		// 开始读取文件
@@ -28,14 +37,17 @@ const ImportButton: React.FC = ({ noteParseSuccess }) => {
 	};
 
 	// 解析 CSV 格式的数据
-	const parseCSV = (csv, columnDelimiter = ",") => {
+	const parseCSV = (csv: string | any, columnDelimiter = ",") => {
+		if (csv === null) {
+			return;
+		}
 		const table = csv.trim().replace(/\r\n?/g, "\n");
 		console.log(table, "table?");
 
 		let quoteCounter = 0;
 		let lastDelimiterIndex = 0;
 		let arrTable = [[]];
-		let anchorRow = arrTable[arrTable.length - 1];
+		let anchorRow: string[] = arrTable[arrTable.length - 1];
 		for (let i = 0; i < table.length; i++) {
 			const char = table[i];
 			if (char === '"' && table[i - 1] !== "\\") {
@@ -74,10 +86,6 @@ const ImportButton: React.FC = ({ noteParseSuccess }) => {
 			handleFileUpload(selectedFile);
 		}
 	};
-
-	function onFileSelected(selectedFile) {
-		console.log(selectedFile, "selectedFile!");
-	}
 
 	return (
 		<>
