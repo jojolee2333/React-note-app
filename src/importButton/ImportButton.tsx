@@ -3,7 +3,6 @@ import NotesAPI from "../api.js";
 import { Note } from "../interfaces.js";
 
 interface ImportButtonProps {
-	handleFileUpload: () => void; // 点击按钮时的事件处理函数
 	noteParseSuccess: () => void;
 }
 
